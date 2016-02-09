@@ -1,7 +1,7 @@
 {
   "name": "hubot-dns-watch",
   "description": "Hubot will watch for DNS changes of specified domains",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "lefthand <lefthand@gmail.com>",
   "license": "MIT",
   "keywords": [
