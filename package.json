@@ -11,24 +11,25 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-dns-watch.git"
+    "url": "git://github.com/lefthand/hubot-dns-watch.git"
   },
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-dns-watch/issues"
+    "url": "https://github.com/lefthand/hubot-dns-watch/issues"
   },
   "dependencies": {
     "coffee-script": "~1.6",
     "node-schedule": "^1.0.0"
   },
   "devDependencies": {
-    "mocha": "*",
     "chai": "*",
-    "sinon-chai": "*",
-    "sinon": "*",
+    "grunt-contrib-watch": "~0.5.3",
     "grunt-mocha-test": "~0.7.0",
     "grunt-release": "~0.6.0",
+    "hubot-test-helper": "^1.4.4",
     "matchdep": "~0.1.2",
-    "grunt-contrib-watch": "~0.5.3"
+    "mocha": "^2.4.5",
+    "sinon": "*",
+    "sinon-chai": "*"
   },
   "main": "index.coffee",
   "scripts": {
