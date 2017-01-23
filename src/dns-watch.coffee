@@ -32,7 +32,7 @@ module.exports = (robot) ->
   robot.brain.data.dns_watches or= {}
 
   formattedSend = (text, res) ->
-    if robot.adapterName == 'slack'
+    if robot.adapterName == 'slack'||'telegram'
       res.send("```#{text}```")
     else if robot.adapterName == 'shell'
       res.send("\n#{text}")
