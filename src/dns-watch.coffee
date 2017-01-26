@@ -32,12 +32,16 @@ module.exports = (robot) ->
   robot.brain.data.dns_watches or= {}
 
   formattedSend = (text, res) ->
-    if robot.adapterName == 'slack'||'telegram'
-      res.send("```#{text}```")
-    else if robot.adapterName == 'shell'
-      res.send("\n#{text}")
-    else
-      res.send("/code #{text}")
+    switch robot.adapterName
+      when 'slack'
+        res.send("```#{text}```")
+      when 'shell'
+        res.send("\n#{text}")
+# telegram has problems with triple quote see: telegramdesktop/tdesktop#1521
+      when 'telegram'
+        res.send("```\n\u200B#{text}\n```")
+      else
+        res.send("/code #{text}")
 
   regex = /dns.+(watch|change|update).* (http(s)?:\/\/)?([^\s/$.?#].[^\s^\/]*)/i
   robot.respond regex, (res) ->
