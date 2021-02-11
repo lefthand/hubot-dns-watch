@@ -25,7 +25,7 @@ checkDomain = (robot, domain, watcher) ->
   dns.lookup domain, (err, addresses, family) ->
     if addresses != watcher.address
       envelope = user: watcher.user_id, room: watcher.room
-      robot.send envelope, "@#{watcher.user_name} DNS for #{domain} changed to #{addresses}! See global propagation: https://www.whatsmydns.net/#A/#{domain}"
+      robot.send envelope, "@#{watcher.user_name} DNS for #{domain} changed to #{addresses}! See global propagation: https://www.nslookup.io/#{domain}"
       removeWatch robot, domain
 
 module.exports = (robot) ->
